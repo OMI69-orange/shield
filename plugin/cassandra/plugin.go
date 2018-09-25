@@ -87,8 +87,8 @@
 
 // If we want to be really prod-ready we need to be able to backup all the keyspaces
 // of the Cassandra cluster.
-// I propose to change the data type of cassandra.keyspace, actually string type, by a slice type 
-// because we dont know the number of keyspaces. It could be alimented by a cqlsh'request on system :
+// I propose to change the data type of cassandra.keyspace, actually string type, by a slice of strings type 
+// because Shield dont know the number of keyspaces to backup. It could be alimented by a cqlsh'request on system :
 // "select keyspace_name from system_schema.keyspaces"
 // to append into the slice keyspace like :
 //    keyspace := []string{"system_auth","system_schema","system_distributed","system","system_traces","ks_user1","ks_user2",..}
