@@ -80,7 +80,9 @@
 // CASSANDRA_CONF). The 'cassandra' BOSH release typically provides thoses
 // scripts in `/var/vcap/cassandra/job/bin`. Please ensure that this directory
 // is added to the SHIELD v8 `env.path` configuration property.
-//
+// REMARK : sstableloader is not needed if we restore file on the node (and for all the nodes)
+// in the same place where they before they where backuped. In this case, a "nodetool refresh" 
+// will do the job of restoring data.
 // This plugin also relies on some `tar` utility that should be provided on
 // its PATH. This will typically be the standard GNU Tar utility, as provided
 // by BOSH stemcells.
